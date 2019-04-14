@@ -21,6 +21,7 @@ Route::group(['prefix' => 'rekanan', 'as' => 'rekanan'], function(){
   Route::post('tambah', 'RekananController@store')->name('Store');
   Route::get('{id}', 'RekananController@edit')->name('Edit');
   Route::put('{id}', 'RekananController@update')->name('Update');
+  Route::delete('{id}', 'RekananController@delete')->name('Delete');
 });
 // ======== template pages =========
 // dashboard

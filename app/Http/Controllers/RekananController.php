@@ -34,4 +34,11 @@ class RekananController extends Controller
     $rekanan->update($request->all());
     return redirect()->route('rekanan')->with(['alert' => true, 'type' => 'success', 'title' => 'Berhasil', 'message' => 'Data Berhasil Diubah']);
   }
+
+  public function delete($id){
+    $id = HCrypt::decrypt($id);
+    $rekanan = Rekanan::findOrFail($id);
+    $rekanan->delete();
+    return redirect()->route('rekanan')->with(['alert' => true, 'type' => 'success', 'title' => 'Berhasil', 'message' => 'Data Berhasil Dihapus']);
+  }
 }

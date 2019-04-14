@@ -3,6 +3,11 @@
     <i class="fas fa-fw fa-tachometer-alt"></i>
     <span>Dashboard</span></a>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="{{ route('monitoringIndex') }}">
+    <i class="fas fa-fw fa fa-search"></i>
+    <span>Monitoring</span></a>
+</li>
 
 
 {{-- menu dibawah hanya dev items --}}

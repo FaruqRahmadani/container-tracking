@@ -5,6 +5,12 @@
 	</a>
 </li>
 <li class="nav-item">
+	<a class="nav-link" href="{{ route('TerkirimIndex') }}">
+		<i class="fas fa-fw fa-paper-plane"></i>
+		<span>Barang Terkirim</span>
+	</a>
+</li>
+<li class="nav-item">
   <a class="nav-link" href="{{ route('rekanan') }}">
     <i class="fas fa-fw fa-users"></i>
 		<span>Rekanan</span>

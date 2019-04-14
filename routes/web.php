@@ -37,6 +37,8 @@ Route::group(['middleware' => 'auth'], function(){
 		Route::put('{id}', 'RekananController@update')->name('Update');
 		Route::delete('{id}', 'RekananController@delete')->name('Delete');
 	});
+
+	Route::view('/barang-terkirim/data', 'barangTerkirim.index')->name('TerkirimIndex');
 });
 
 Route::group(['namespace' => 'Auth'], function () {

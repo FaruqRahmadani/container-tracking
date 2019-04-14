@@ -1,0 +1,22 @@
+.title-link {
+	text-decoration: none !important;
+}
+
+.card-link {
+	text-decoration: none !important;
+	color: $gray-700;
+}
+
+.link-unset-decoration {
+	text-decoration: none !important;
+}
+
+.vl {
+	border-left: 2px solid $gray-700;
+	// height: 500px;
+}
+
+.message-card {
+	max-height: 300px;
+	overflow-y: auto;
+}

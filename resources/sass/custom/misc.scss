@@ -1,0 +1,15 @@
+.nowrap {
+	white-space: nowrap;
+}
+
+.not-selected {
+	* {
+		color: #858796 !important;
+	}
+}
+
+.container-filter-datatable {
+	@media (max-width: $breakpoint-md) {
+		justify-content: center;
+	}
+}

@@ -26,6 +26,12 @@
             </div>
 					</div>
 					<div class="form-group row">
+            <label class="col-sm-2 col-form-label">Tanggal Terima</label>
+            <div class="col-sm-10">
+              <input type="date" class="form-control" name="tanggal" placeholder="tanggal terima" required>
+            </div>
+					</div>
+					<div class="form-group row">
             <label class="col-sm-2 col-form-label">Keterangan</label>
             <div class="col-sm-10">
 							<textarea name="keterangan" class="form-control" rows="3" required></textarea>

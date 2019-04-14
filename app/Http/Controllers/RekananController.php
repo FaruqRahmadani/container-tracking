@@ -11,4 +11,8 @@ class RekananController extends Controller
     $rekanan = Rekanan::all();
     return view('rekanan.index', compact('rekanan'));
   }
+
+  public function create(){
+    return view('rekanan.create');
+  }
 }

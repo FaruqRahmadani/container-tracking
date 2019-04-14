@@ -17,7 +17,8 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'rekanan', 'as' => 'rekanan'], function(){
   Route::get('data', 'RekananController@index')->name('Index');
-  Route::view('tambah', 'rekanan.create')->name('Create');
+  Route::get('tambah', 'RekananController@create')->name('Create');
+  Route::post('tambah', 'RekananController@store')->name('Store');
 });
 // ======== template pages =========
 // dashboard

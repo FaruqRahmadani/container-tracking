@@ -5,7 +5,8 @@
   <div class="col-xl-12 col-lg-12 col-sm-12">
     <div class="card shadow mb-4">
       <div class="card-body">
-        <form action="">
+        <form action="{!! route('rekananStore') !!}">
+          @csrf
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Nama Rekanan</label>
             <div class="col-sm-10">
@@ -21,7 +22,7 @@
 					<div class="form-group row">
             <label class="col-sm-2 col-form-label">Nomor Telepon</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="telepon" placeholder="nomor telepon" required>
+              <input type="text" class="form-control" name="nomor_telepon" placeholder="nomor telepon" required>
             </div>
 					</div>
 					<div class="form-group row">

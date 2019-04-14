@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('template.dashboard');
-});
+//view app
+Route::view('/', 'dashboard.index');
+
 // ======== template pages =========
 // dashboard
 Route::view('template/dashboard', 'template.dashboard');
@@ -37,3 +37,4 @@ Route::view('template/blank', 'template.blank');
 Route::view('template/data', 'template.dataTable');
 // chart.js
 Route::view('template/chart', 'template.chart');
+

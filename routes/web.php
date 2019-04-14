@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('template.dashboard');
 });
+
+Route::view('/barang/data', 'barang.index')->name('barangIndex');
+Route::view('/barang/tambah', 'barang.create')->name('barangCreate');
 // ======== template pages =========
 // dashboard
 Route::view('template/dashboard', 'template.dashboard');

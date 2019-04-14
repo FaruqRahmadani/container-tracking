@@ -30,6 +30,7 @@ Route::group(['middleware' => 'auth'], function(){
 
 	Route::group(['prefix' => 'rekanan', 'as' => 'rekanan'], function(){
 		Route::get('data', 'RekananController@index');
+		Route::get('cetak', 'RekananController@generatePDF')->name('Cetak');
 		Route::get('tambah', 'RekananController@create')->name('Create');
 		Route::post('tambah', 'RekananController@store')->name('Store');
 		Route::get('{id}', 'RekananController@edit')->name('Edit');

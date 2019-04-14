@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Rekanan;
 use HCrypt;
+use PDF;
 
 class RekananController extends Controller
 {
@@ -40,5 +41,11 @@ class RekananController extends Controller
     $rekanan = Rekanan::findOrFail($id);
     $rekanan->delete();
     return redirect()->route('rekanan')->with(['alert' => true, 'type' => 'success', 'title' => 'Berhasil', 'message' => 'Data Berhasil Dihapus']);
+	}
+	public function generatePDF(){
+		$rekanan = Rekanan::all();
+		$pdf = PDF::loadview('rekanan.print', compact('rekanan'));
+		$pdf->setPaper('A4', 'landscape');
+    return $pdf->stream("data_rekanan.pdf");
   }
 }

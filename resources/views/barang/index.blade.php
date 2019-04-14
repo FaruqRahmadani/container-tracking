@@ -19,6 +19,7 @@
 					<tr>
 						<th>#</th>
 						<th>Nomor Kontainer</th>
+						<th>Tanggal Terima</th>
 						<th>Nama Barang</th>
 						<th>Pengirim</th>
 						<th>Penerima</th>
@@ -31,6 +32,9 @@
 						<td class="penomoran">{{$i}}</td>
 						<td class="text-center">
 							XX-{{$i}}
+						</td>
+						<td>
+							01/01/2019
 						</td>
 						<td>
 							Lorem, ipsum dolor.

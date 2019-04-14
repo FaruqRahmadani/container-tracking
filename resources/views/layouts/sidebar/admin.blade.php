@@ -3,6 +3,12 @@
     <i class="fas fa-fw fa-tachometer-alt"></i>
     <span>Dashboard</span></a>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="{{ route('barangIndex') }}">
+    <i class="fas fa-fw fa-archive"></i>
+		<span>Barang</span>
+	</a>
+</li>
 
 
 {{-- menu dibawah hanya dev items --}}

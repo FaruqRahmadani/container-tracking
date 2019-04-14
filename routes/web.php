@@ -37,3 +37,5 @@ Route::view('template/blank', 'template.blank');
 Route::view('template/data', 'template.dataTable');
 // chart.js
 Route::view('template/chart', 'template.chart');
+
+Route::view('/login', 'depan.auth');

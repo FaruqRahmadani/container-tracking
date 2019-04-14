@@ -14,8 +14,15 @@
 Route::get('/', function () {
     return view('template.dashboard');
 });
-Route::view('/rekanan/data', 'rekanan.index')->name('rekananIndex');
-Route::view('/rekanan/tambah', 'rekanan.create')->name('rekananCreate');
+
+Route::group(['prefix' => 'rekanan', 'as' => 'rekanan'], function(){
+  Route::get('data', 'RekananController@index');
+  Route::get('tambah', 'RekananController@create')->name('Create');
+  Route::post('tambah', 'RekananController@store')->name('Store');
+  Route::get('{id}', 'RekananController@edit')->name('Edit');
+  Route::put('{id}', 'RekananController@update')->name('Update');
+  Route::delete('{id}', 'RekananController@delete')->name('Delete');
+});
 // ======== template pages =========
 // dashboard
 Route::view('template/dashboard', 'template.dashboard');

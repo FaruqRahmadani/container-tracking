@@ -20,6 +20,7 @@ Route::group(['prefix' => 'rekanan', 'as' => 'rekanan'], function(){
   Route::get('tambah', 'RekananController@create')->name('Create');
   Route::post('tambah', 'RekananController@store')->name('Store');
   Route::get('{id}', 'RekananController@edit')->name('Edit');
+  Route::put('{id}', 'RekananController@update')->name('Update');
 });
 // ======== template pages =========
 // dashboard

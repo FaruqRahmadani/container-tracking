@@ -1,11 +1,12 @@
 @extends('layouts.app')
-@section('page-title', 'Tambah Data Rekanan')
+@section('page-title', 'Ubah Data Rekanan')
 @section('content')
 <div class="row">
   <div class="col-xl-12 col-lg-12 col-sm-12">
     <div class="card shadow mb-4">
       <div class="card-body">
-        <form action="{!! route('rekananStore') !!}" method="post">
+        <form action="{!! route('rekananUpdate', $rekanan->uuid) !!}" method="post">
+          {{ method_field('put') }}
           @csrf
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Nama Rekanan</label>

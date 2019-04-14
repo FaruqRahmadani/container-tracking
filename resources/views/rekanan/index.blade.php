@@ -1,16 +1,21 @@
 @extends('layouts.app')
 @section('page-title', 'Data Rekanan')
 @section('content')
-	<div class="card shadow mb-4">
-		<div class="card-header py-3">
-			<div class="m-0 font-weight-bold text-primary text-right">
-				<a href="{{ route('rekananCreate') }}" class="btn btn-primary btn-icon-split btn-sm">
-					<span class="icon text-white-50">
-						<i class="fas fa-plus"></i>
-					</span>
-					<span class="text">Tambah Data</span>
-				</a>
-			</div>
+<div class="card shadow mb-4">
+	<div class="card-header py-3">
+		<div class="m-0 font-weight-bold text-primary text-right">
+			<a href="" class="btn btn-success btn-icon-split btn-sm">
+				<span class="icon text-white-50">
+					<i class="fas fa-print"></i>
+				</span>
+				<span class="text">Cetak</span>
+			</a>
+			<a href="{{ route('rekananCreate') }}" class="btn btn-primary btn-icon-split btn-sm">
+				<span class="icon text-white-50">
+					<i class="fas fa-plus"></i>
+				</span>
+				<span class="text">Tambah Data</span>
+			</a>
 		</div>
 		<div class="card-body">
 			<div class="table-responsive">

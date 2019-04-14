@@ -15,4 +15,9 @@ class RekananController extends Controller
   public function create(){
     return view('rekanan.create');
   }
+
+  public function store(Request $request){
+    $rekanan = Rekanan::create($request->all());
+    return redirect()->route('rekananIndex')->with(['alert' => true, 'type' => 'success', 'title' => 'Berhasil', 'message' => 'Data Berhasil Ditambahkan']);
+  }
 }

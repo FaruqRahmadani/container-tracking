@@ -5,7 +5,7 @@
   <div class="col-xl-12 col-lg-12 col-sm-12">
     <div class="card shadow mb-4">
       <div class="card-body">
-        <form action="{!! route('rekananStore') !!}">
+        <form action="{!! route('rekananStore') !!}" method="post">
           @csrf
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Nama Rekanan</label>

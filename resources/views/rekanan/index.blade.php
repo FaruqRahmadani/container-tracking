@@ -27,28 +27,26 @@
 					</tr>
 				</thead>
 				<tbody>
-					@for ($i = 1; $i < 15; $i++) <tr>
-						<td class="penomoran">{{$i}}</td>
-						<td>Lorem, ipsum dolor.</td>
-						<td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, tenetur.</td>
-						<td>
-							Lorem, ipsum dolor.
-							<br>
-							<small>+62 999 9999 9999</small>
-						</td>
-						<td>
-							+62 999 9999 9999
-						</td>
-						<td>
-							mail@mail.com
-						</td>
-						<td class="aksi">
-							<a href="#" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-info-circle"></i> info</a>
-							<a href="#" class="btn btn-labeled btn-secondary btn-xs"><i class="fa fa-edit"></i> ubah</a>
-							<a href="#" class="btn btn-labeled btn-danger btn-xs"><i class="fa fa-trash"></i> hapus</a>
-						</td>
-					</tr>
-					@endfor
+					@foreach ($rekanan as $value)
+						<tr>
+							<td class="penomoran">{{$loop->iteration}}</td>
+							<td>{{$value->nama}}</td>
+							<td>{{$value->alamat}}</td>
+							<td>
+								<small>{{$value->nomor_telepon}}</small>
+							</td>
+							<td>
+								{{$value->email}}
+							</td>
+							<td>
+								{{$value->penanggung_jawab}}
+							</td>
+							<td class="aksi">
+								<a href="#" class="btn btn-labeled btn-secondary btn-xs"><i class="fa fa-edit"></i> ubah</a>
+								<a href="#" class="btn btn-labeled btn-danger btn-xs"><i class="fa fa-trash"></i> hapus</a>
+							</td>
+						</tr>
+					@endforeach
 				</tbody>
 			</table>
 		</div>

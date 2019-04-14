@@ -14,8 +14,11 @@
 Route::get('/', function () {
     return view('template.dashboard');
 });
-Route::view('/rekanan/data', 'rekanan.index')->name('rekananIndex');
-Route::view('/rekanan/tambah', 'rekanan.create')->name('rekananCreate');
+
+Route::group(['prefix' => 'rekanan', 'as' => 'rekanan'], function(){
+  Route::get('data', 'RekananController@index')->name('Index');
+  Route::view('tambah', 'rekanan.create')->name('Create');
+});
 // ======== template pages =========
 // dashboard
 Route::view('template/dashboard', 'template.dashboard');

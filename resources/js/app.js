@@ -1,33 +1,25 @@
-
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
+// core js
 require('./bootstrap');
+require('jquery.easing');
+require('./sb-admin-2');
+// dataTable
+require('datatables.net/js/jquery.dataTables');
+require('datatables.net-bs4/js/dataTables.bootstrap4');
+require('./custom/dataTable');
+// chartJs
+require('chart.js/dist/Chart');
+// chartJs demo
+require('./demo/chart-area-demo')
+require('./demo/chart-pie-demo');
+require('./demo/chart-bar-demo');
+// select2
+require('select2/dist/js/select2.full');
+require('./custom/select2');
+//sweetalert
+require('sweetalert/dist/sweetalert.min');
+require('bootstrap-notify/bootstrap-notify');
+require('./custom/alert');
+require('./custom/misc');
 
+// vue.js
 window.Vue = require('vue');
-
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
-
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-const app = new Vue({
-    el: '#app'
-});

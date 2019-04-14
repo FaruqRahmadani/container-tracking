@@ -12,12 +12,13 @@
 								<div class="text-center">
 									<h1 class="h4 text-gray-900 mb-4"><i class="fa fa-truck"></i> Tracking </h1>
 								</div>
-								<form class="user" method="POST">
+								<form class="user" method="post" action="{!! route('login') !!}">
+									@csrf
 									<div class="form-group">
-										<input type="username" class="form-control form-control-user" placeholder="Username" required>
+										<input name="username" class="form-control form-control-user" placeholder="Username" required>
 									</div>
 									<div class="form-group">
-										<input type="password" class="form-control form-control-user" placeholder="Password" required>
+										<input type="password" name="password" class="form-control form-control-user" placeholder="Password" required>
 									</div>
 									<button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
 								</form>

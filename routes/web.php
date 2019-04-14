@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('template.dashboard');
 });
+Route::view('/monitoring/data', 'monitoring.index')->name('monitoringIndex');
 // ======== template pages =========
 // dashboard
 Route::view('template/dashboard', 'template.dashboard');

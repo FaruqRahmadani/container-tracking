@@ -1,0 +1,35 @@
+.select2 {
+	.select2-selection {
+		// border: 5px solid $abu-border;
+		padding: 0.375rem 0.875rem !important;
+
+		.select2-selection__rendered {
+			font-size: 0.875rem;
+			height: 100%;
+			margin-top: 5px;
+		}
+	}
+}
+
+.select2-container--bootstrap4 .select2-dropdown {
+	// border: 5px solid $abu-border;
+}
+
+.select2-results {
+	padding-left: 12px;
+	padding-right: 12px;
+
+	.select2-results__option {
+		padding-left: 14px;
+		font-size: 0.875rem !important;
+	}
+}
+
+.select2-search {
+	margin-left: 8px;
+	margin-right: 8px;
+
+	.select2-search__field {
+		padding: 8px;
+	}
+}

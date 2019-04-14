@@ -1,14 +1,18 @@
-
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
-// Variables
+// Core
+@import url('https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i');
+@import '~@fortawesome/fontawesome-free/css/all';
 @import 'variables';
-
-// Bootstrap
 @import '~bootstrap/scss/bootstrap';
+@import'sb_admin/sb-admin-2';
+@import '~datatables.net-bs4/css/dataTables.bootstrap4';
+@import '~select2/dist/css/select2';
+@import '~select2-bootstrap4-theme/src/select2-bootstrap4';
+@import '~animate.css/animate';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
+// custom scss
+@import 'custom/select2';
+@import 'custom/dataTable';
+@import 'custom/button';
+@import 'custom/image';
+@import 'custom/misc';
+@import 'custom/page';

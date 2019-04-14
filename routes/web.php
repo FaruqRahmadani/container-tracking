@@ -14,6 +14,8 @@
 Route::get('/', function () {
     return view('template.dashboard');
 });
+Route::view('/rekanan/data', 'rekanan.index')->name('rekananIndex');
+Route::view('/rekanan/tambah', 'rekanan.create')->name('rekananCreate');
 // ======== template pages =========
 // dashboard
 Route::view('template/dashboard', 'template.dashboard');

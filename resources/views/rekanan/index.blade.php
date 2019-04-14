@@ -44,7 +44,7 @@
 								<small>{{$value->telepon_penanggungjawab}}</small>
 							</td>
 							<td class="aksi">
-								<a href="#" class="btn btn-labeled btn-secondary btn-xs"><i class="fa fa-edit"></i> ubah</a>
+								<a href="{!! route('rekananEdit', $value->uuid) !!}" class="btn btn-labeled btn-secondary btn-xs"><i class="fa fa-edit"></i> ubah</a>
 								<a href="#" class="btn btn-labeled btn-danger btn-xs"><i class="fa fa-trash"></i> hapus</a>
 							</td>
 						</tr>

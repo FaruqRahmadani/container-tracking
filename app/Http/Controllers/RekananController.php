@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Rekanan;
+use HCrypt;
 
 class RekananController extends Controller
 {
@@ -18,6 +19,12 @@ class RekananController extends Controller
 
   public function store(Request $request){
     $rekanan = Rekanan::create($request->all());
-    return redirect()->route('rekananIndex')->with(['alert' => true, 'type' => 'success', 'title' => 'Berhasil', 'message' => 'Data Berhasil Ditambahkan']);
+    return redirect()->route('rekanan')->with(['alert' => true, 'type' => 'success', 'title' => 'Berhasil', 'message' => 'Data Berhasil Ditambahkan']);
+  }
+
+  public function edit($id){
+    $id = HCrypt::decrypt($id);
+    $rekanan = Rekanan::findOrFail($id);
+    return view('rekanan.edit', compact('rekanan'));
   }
 }

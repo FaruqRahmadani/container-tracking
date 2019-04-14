@@ -5,7 +5,7 @@
 	</a>
 </li>
 <li class="nav-item">
-  <a class="nav-link" href="{{ route('rekananIndex') }}">
+  <a class="nav-link" href="{{ route('rekanan') }}">
     <i class="fas fa-fw fa-users"></i>
 		<span>Rekanan</span>
 	</a>

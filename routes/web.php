@@ -26,7 +26,16 @@ Route::group(['middleware' => 'auth'], function(){
   // dataTable
   Route::view('template/data', 'template.dataTable');
   // chart.js
-  Route::view('template/chart', 'template.chart');
+	Route::view('template/chart', 'template.chart');
+
+	Route::group(['prefix' => 'rekanan', 'as' => 'rekanan'], function(){
+		Route::get('data', 'RekananController@index');
+		Route::get('tambah', 'RekananController@create')->name('Create');
+		Route::post('tambah', 'RekananController@store')->name('Store');
+		Route::get('{id}', 'RekananController@edit')->name('Edit');
+		Route::put('{id}', 'RekananController@update')->name('Update');
+		Route::delete('{id}', 'RekananController@delete')->name('Delete');
+	});
 });
 
 Route::group(['namespace' => 'Auth'], function () {
@@ -35,4 +44,3 @@ Route::group(['namespace' => 'Auth'], function () {
   Route::get('logout', 'LoginController@logout')->name('logout');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');

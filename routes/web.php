@@ -12,7 +12,7 @@
 */
 
 //view app
-Route::view('/', 'dashboard.index');
+Route::view('/', 'dashboard.index')->name('dashboard');
 
 // ======== template pages =========
 // dashboard

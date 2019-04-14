@@ -8,6 +8,7 @@ $factory->define(App\Rekanan::class, function (Faker $faker) {
     'alamat' => $faker->address,
     'nomor_telepon' => $faker->phoneNumber,
     'email' => $faker->safeEmail,
-    'penanggung_jawab' => $faker->name()
+    'penanggung_jawab' => $faker->name(),
+    'telepon_penanggungjawab' => $faker->phoneNumber
   ];
 });

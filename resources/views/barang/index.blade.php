@@ -54,7 +54,7 @@
 							<td>{{$value->Rekanan->nama}}</td>
 							<td>{!! nl2br($value->keterangan) !!}</td>
 							<td class="aksi">
-								<a href="#" class="btn btn-labeled btn-secondary btn-xs"><i class="fa fa-edit"></i> ubah</a>
+								<a href="{!! route('barangEdit', $value->uuid) !!}" class="btn btn-labeled btn-secondary btn-xs"><i class="fa fa-edit"></i> ubah</a>
 								<a href="#" class="btn btn-labeled btn-danger btn-xs"><i class="fa fa-trash"></i> hapus</a>
 							</td>
 						</tr>

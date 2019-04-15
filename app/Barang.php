@@ -11,4 +11,8 @@ class Barang extends Model
   public function Rekanan(){
     return $this->belongsTo('App\Rekanan');
   }
+
+  public function getUUIDAttribute(){
+    return encrypt($this->id);
+  }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Rekanan;
 use App\Barang;
+use HCrypt;
 
 class BarangController extends Controller
 {
@@ -21,5 +22,12 @@ class BarangController extends Controller
   public function store(Request $request){
     $barang = Barang::create($request->all());
     return redirect()->route('barang')->with(['alert' => true, 'type' => 'success', 'title' => 'Berhasil', 'message' => 'Data Berhasil Ditambahkan']);
+  }
+
+  public function edit($id){
+    $id = HCrypt::decrypt($id);
+    $barang = Barang::findOrFail($id);
+    $rekanan = Rekanan::all();
+    return view('barang.edit', compact('rekanan', 'barang'));
   }
 }

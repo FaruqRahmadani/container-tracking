@@ -55,7 +55,13 @@
 							<td>{!! nl2br($value->keterangan) !!}</td>
 							<td class="aksi">
 								<a href="{!! route('barangEdit', $value->uuid) !!}" class="btn btn-labeled btn-secondary btn-xs"><i class="fa fa-edit"></i> ubah</a>
-								<a href="#" class="btn btn-labeled btn-danger btn-xs"><i class="fa fa-trash"></i> hapus</a>
+								<form action="{!! route('barangDelete', $value->uuid) !!}" method="post">
+									{{ method_field('delete') }}
+									@csrf
+									<button type="submit" class="btn btn-labeled btn-danger btn-xs btn-delete">
+										<i class="fa fa-trash"></i> hapus</a>
+									</button>
+								</form>
 							</td>
 						</tr>
 					@endforeach

@@ -37,4 +37,11 @@ class BarangController extends Controller
     $barang->update($request->all());
     return redirect()->route('barang')->with(['alert' => true, 'type' => 'success', 'title' => 'Berhasil', 'message' => 'Data Berhasil Diubah']);
   }
+
+  public function delete($id){
+    $id = HCrypt::decrypt($id);
+    $barang = Barang::findOrFail($id);
+    $barang->delete();
+    return redirect()->route('barang')->with(['alert' => true, 'type' => 'success', 'title' => 'Berhasil', 'message' => 'Data Berhasil Dihapus']);
+  }
 }

@@ -44,6 +44,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::post('tambah', 'BarangController@store')->name('Store');
     Route::get('{id}', 'BarangController@edit')->name('Edit');
     Route::put('{id}', 'BarangController@update')->name('Update');
+    Route::delete('{id}', 'BarangController@delete')->name('Delete');
   });
 });
 

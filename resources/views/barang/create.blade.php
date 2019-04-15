@@ -5,7 +5,8 @@
   <div class="col-xl-12 col-lg-12 col-sm-12">
     <div class="card shadow mb-4">
       <div class="card-body">
-        <form action="">
+        <form action="{!! route('barangStore') !!}" method="post">
+          @csrf
 					<div class="form-group row">
             <label class="col-sm-2 col-form-label">Nomor Kontainer</label>
             <div class="col-sm-10">
@@ -28,7 +29,7 @@
 					<div class="form-group row">
             <label class="col-sm-2 col-form-label">Tanggal Terima</label>
             <div class="col-sm-10">
-              <input type="date" class="form-control" name="tanggal_terima" placeholder="tanggal terima" required>
+              <input type="date" class="form-control" name="tanggal_terima" required>
             </div>
 					</div>
 					<div class="form-group row">

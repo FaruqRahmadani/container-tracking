@@ -39,7 +39,7 @@ Route::group(['middleware' => 'auth'], function(){
   });
 
   Route::group(['prefix' => 'barang', 'as' => 'barang'], function(){
-    Route::view('', 'barang.index');
+    Route::get('', 'BarangController@index');
     Route::view('tambah', 'barang.create')->name('Create');
   });
 });

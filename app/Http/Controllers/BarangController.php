@@ -30,4 +30,11 @@ class BarangController extends Controller
     $rekanan = Rekanan::all();
     return view('barang.edit', compact('rekanan', 'barang'));
   }
+
+  public function update($id, Request $request){
+    $id = HCrypt::decrypt($id);
+    $barang = Barang::findOrFail($id);
+    $barang->update($request->all());
+    return redirect()->route('barang')->with(['alert' => true, 'type' => 'success', 'title' => 'Berhasil', 'message' => 'Data Berhasil Diubah']);
+  }
 }

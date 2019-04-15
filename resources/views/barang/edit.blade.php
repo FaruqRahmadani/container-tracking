@@ -5,7 +5,8 @@
   <div class="col-xl-12 col-lg-12 col-sm-12">
     <div class="card shadow mb-4">
       <div class="card-body">
-        <form action="{!! route('barangStore') !!}" method="post">
+        <form action="{!! route('barangUpdate', $barang->uuid) !!}" method="post">
+          {{ method_field('put') }}
           @csrf
 					<div class="form-group row">
             <label class="col-sm-2 col-form-label">Nomor Kontainer</label>

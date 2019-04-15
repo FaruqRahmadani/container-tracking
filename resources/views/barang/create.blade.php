@@ -28,7 +28,7 @@
 					<div class="form-group row">
             <label class="col-sm-2 col-form-label">Tanggal Terima</label>
             <div class="col-sm-10">
-              <input type="date" class="form-control" name="tanggal" placeholder="tanggal terima" required>
+              <input type="date" class="form-control" name="tanggal_terima" placeholder="tanggal terima" required>
             </div>
 					</div>
 					<div class="form-group row">
@@ -40,10 +40,11 @@
 					<div class="form-group row">
             <label for="" class="col-sm-2 col-form-label">Penerima</label>
             <div class="col-sm-10">
-              <select class="form-control select2" name="penerima" required>
-								@for ($i = 1; $i < 10; $i++)
-								<option>Lorem, ipsum.{{$i}}</option>
-                  @endfor
+              <select class="form-control select2" name="rekanan_id" required>
+                <option value="">Pilih</option>
+                @foreach ($rekanan as $value)
+                  <option value="{{$value->id}}">{{$value->nama}}</option>
+                @endforeach
               </select>
             </div>
           </div>

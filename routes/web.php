@@ -40,7 +40,7 @@ Route::group(['middleware' => 'auth'], function(){
 
   Route::group(['prefix' => 'barang', 'as' => 'barang'], function(){
     Route::get('', 'BarangController@index');
-    Route::view('tambah', 'barang.create')->name('Create');
+    Route::get('tambah', 'BarangController@create')->name('Create');
   });
 });
 

@@ -29,7 +29,7 @@ Route::group(['middleware' => 'auth'], function(){
   Route::view('template/chart', 'template.chart');
 
   Route::group(['prefix' => 'rekanan', 'as' => 'rekanan'], function(){
-    Route::get('data', 'RekananController@index');
+    Route::get('', 'RekananController@index');
     Route::get('cetak', 'RekananController@generatePDF')->name('Cetak');
     Route::get('tambah', 'RekananController@create')->name('Create');
     Route::post('tambah', 'RekananController@store')->name('Store');
@@ -37,10 +37,13 @@ Route::group(['middleware' => 'auth'], function(){
     Route::put('{id}', 'RekananController@update')->name('Update');
     Route::delete('{id}', 'RekananController@delete')->name('Delete');
   });
+
+  Route::group(['prefix' => 'barang', 'as' => 'barang'], function(){
+    Route::view('', 'barang.index');
+    Route::view('tambah', 'barang.create')->name('Create');
+  });
 });
 
-Route::view('/barang/data', 'barang.index')->name('barangIndex');
-Route::view('/barang/tambah', 'barang.create')->name('barangCreate');
 
 Route::group(['namespace' => 'Auth'], function () {
   Route::get('login', 'LoginController@showLoginForm');

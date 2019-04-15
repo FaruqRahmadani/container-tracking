@@ -11,7 +11,7 @@
 	</a>
 </li>
 <li class="nav-item">
-  <a class="nav-link" href="{{ route('barangIndex') }}">
+  <a class="nav-link" href="{{ route('barang') }}">
     <i class="fas fa-fw fa-archive"></i>
 		<span>Barang</span>
 	</a>

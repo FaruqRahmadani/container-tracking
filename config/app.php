@@ -227,8 +227,9 @@ return [
     'URL' => Illuminate\Support\Facades\URL::class,
     'Validator' => Illuminate\Support\Facades\Validator::class,
     'View' => Illuminate\Support\Facades\View::class,
-		'HCrypt' => App\Helpers\CryptHelper::class,
-		'PDF' => Barryvdh\DomPDF\Facade::class,
+    'PDF' => Barryvdh\DomPDF\Facade::class,
+    'HCrypt' => App\Helpers\CryptHelper::class,
+		'HDate' => App\Helpers\DateHelper::class,
   ],
 
 ];

@@ -10,7 +10,17 @@
 		<span>Rekanan</span>
 	</a>
 </li>
-
+<li class="nav-item">
+  <a class="nav-link" href="{{ route('barang') }}">
+    <i class="fas fa-fw fa-archive"></i>
+		<span>Barang</span>
+	</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{{ route('monitoring') }}">
+    <i class="fas fa-fw fa fa-search"></i>
+    <span>Monitoring</span></a>
+</li>
 
 
 {{-- menu dibawah hanya dev items --}}

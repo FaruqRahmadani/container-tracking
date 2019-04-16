@@ -19,6 +19,7 @@ require('./custom/select2');
 require('sweetalert/dist/sweetalert.min');
 require('bootstrap-notify/bootstrap-notify');
 require('./custom/alert');
+require('./custom/monitoring');
 require('./custom/misc');
 
 // vue.js

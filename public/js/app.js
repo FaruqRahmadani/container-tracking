@@ -85716,6 +85716,8 @@ __webpack_require__(/*! bootstrap-notify/bootstrap-notify */ "./node_modules/boo
 
 __webpack_require__(/*! ./custom/alert */ "./resources/js/custom/alert.js");
 
+__webpack_require__(/*! ./custom/monitoring */ "./resources/js/custom/monitoring.js");
+
 __webpack_require__(/*! ./custom/misc */ "./resources/js/custom/misc.js"); // vue.js
 
 
@@ -85853,6 +85855,21 @@ $(".dataTable").ready(function () {
 
 $(document).ready(function () {
   $('[data-toggle="tooltip"]').tooltip();
+});
+
+/***/ }),
+
+/***/ "./resources/js/custom/monitoring.js":
+/*!*******************************************!*\
+  !*** ./resources/js/custom/monitoring.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(".modalKirim").click(function () {
+  url = $(this).attr('href');
+  form = $("#modalKirim").find('form');
+  form.attr('action', url);
 });
 
 /***/ }),
@@ -86271,8 +86288,8 @@ $("#myPieChart").ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/ahmadsyauqi/Sites/container-tracking/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/ahmadsyauqi/Sites/container-tracking/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/faruqrahmadani/Sites/containerTracking/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/faruqrahmadani/Sites/containerTracking/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

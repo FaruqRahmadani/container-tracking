@@ -5,7 +5,7 @@
 	</a>
 </li>
 <li class="nav-item">
-	<a class="nav-link" href="{{ route('TerkirimIndex') }}">
+	<a class="nav-link" href="{{ route('terkirim') }}">
 		<i class="fas fa-fw fa-paper-plane"></i>
 		<span>Barang Terkirim</span>
 	</a>

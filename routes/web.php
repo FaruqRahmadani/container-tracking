@@ -56,14 +56,15 @@ Route::group(['middleware' => 'auth'], function(){
     Route::put('{id}', 'BarangController@update')->name('Update');
     Route::delete('{id}', 'BarangController@delete')->name('Delete');
   });
-  
+
+  Route::group(['prefix' => 'terkirim', 'as' => 'terkirim'], function(){
+    Route::view('', 'terkirim.index');
+  });
+
   Route::group(['prefix' => 'monitoring', 'as' => 'monitoring'], function(){
     Route::get('', 'MonitoringController@index');
     Route::put('{id}', 'MonitoringController@update')->name('Update');
   });
-
-  Route::view('/barang-terkirim/data', 'barangTerkirim.index')->name('TerkirimIndex');
-
 });
 
 

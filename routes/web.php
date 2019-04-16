@@ -26,7 +26,7 @@ Route::group(['middleware' => 'auth'], function(){
   // dataTable
   Route::view('template/data', 'template.dataTable');
   // chart.js
-	Route::view('template/chart', 'template.chart');
+  Route::view('template/chart', 'template.chart');
 
 	Route::group(['prefix' => 'rekanan', 'as' => 'rekanan'], function(){
 		Route::get('data', 'RekananController@index');
@@ -38,12 +38,38 @@ Route::group(['middleware' => 'auth'], function(){
 		Route::delete('{id}', 'RekananController@delete')->name('Delete');
 	});
 
-	Route::view('/barang-terkirim/data', 'barangTerkirim.index')->name('TerkirimIndex');
+  Route::group(['prefix' => 'rekanan', 'as' => 'rekanan'], function(){
+    Route::get('', 'RekananController@index');
+    Route::get('cetak', 'RekananController@generatePDF')->name('Cetak');
+    Route::get('tambah', 'RekananController@create')->name('Create');
+    Route::post('tambah', 'RekananController@store')->name('Store');
+    Route::get('{id}', 'RekananController@edit')->name('Edit');
+    Route::put('{id}', 'RekananController@update')->name('Update');
+    Route::delete('{id}', 'RekananController@delete')->name('Delete');
+  });
+
+  Route::group(['prefix' => 'barang', 'as' => 'barang'], function(){
+    Route::get('', 'BarangController@index');
+    Route::get('tambah', 'BarangController@create')->name('Create');
+    Route::post('tambah', 'BarangController@store')->name('Store');
+    Route::get('{id}', 'BarangController@edit')->name('Edit');
+    Route::put('{id}', 'BarangController@update')->name('Update');
+    Route::delete('{id}', 'BarangController@delete')->name('Delete');
+  });
+
+  Route::group(['prefix' => 'terkirim', 'as' => 'terkirim'], function(){
+    Route::get('', 'TerkirimController@index');
+  });
+
+  Route::group(['prefix' => 'monitoring', 'as' => 'monitoring'], function(){
+    Route::get('', 'MonitoringController@index');
+    Route::put('{id}', 'MonitoringController@update')->name('Update');
+  });
 });
+
 
 Route::group(['namespace' => 'Auth'], function () {
   Route::get('login', 'LoginController@showLoginForm');
   Route::post('login', 'LoginController@login')->name('login');
   Route::get('logout', 'LoginController@logout')->name('logout');
 });
-

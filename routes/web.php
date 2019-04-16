@@ -47,7 +47,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::delete('{id}', 'BarangController@delete')->name('Delete');
   });
   Route::group(['prefix' => 'monitoring', 'as' => 'monitoring'], function(){
-    Route::view('', 'monitoring.index');
+    Route::get('', 'MonitoringController@index');
   });
 });
 

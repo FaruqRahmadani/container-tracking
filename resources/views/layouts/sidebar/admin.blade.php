@@ -5,12 +5,6 @@
 	</a>
 </li>
 <li class="nav-item">
-	<a class="nav-link" href="{{ route('terkirim') }}">
-		<i class="fas fa-fw fa-paper-plane"></i>
-		<span>Barang Terkirim</span>
-	</a>
-</li>
-<li class="nav-item">
   <a class="nav-link" href="{{ route('rekanan') }}">
     <i class="fas fa-fw fa-users"></i>
 		<span>Rekanan</span>
@@ -27,11 +21,15 @@
     <i class="fas fa-fw fa fa-search"></i>
     <span>Monitoring</span></a>
 </li>
-
+<li class="nav-item">
+	<a class="nav-link" href="{{ route('terkirim') }}">
+		<i class="fas fa-fw fa-paper-plane"></i>
+		<span>Barang Terkirim</span>
+	</a>
+</li>
 
 {{-- menu dibawah hanya dev items --}}
-
-<div class="sidebar-heading">
+{{-- <div class="sidebar-heading">
 	Devlopement Only
 </div>
 <li class="nav-item">
@@ -66,4 +64,4 @@
 			<div class="collapse-divider"></div>
 		</div>
 	</div>
-</li>
+</li> --}}

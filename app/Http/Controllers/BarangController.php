@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Rekanan;
 use App\Barang;
 use HCrypt;
+use PDF;
 
 class BarangController extends Controller
 {
@@ -43,5 +44,11 @@ class BarangController extends Controller
     $barang = Barang::findOrFail($id);
     $barang->delete();
     return redirect()->route('barang')->with(['alert' => true, 'type' => 'success', 'title' => 'Berhasil', 'message' => 'Data Berhasil Dihapus']);
-  }
+	}
+	public function generatePDF(Request $request){
+		$barang = Barang::whereBetween('tanggal_terima',[$request->tanggal_awal, $request->tanggal_akhir])->get();
+		$pdf = PDF::loadview('barang.print', compact('request', 'barang'));
+		$pdf->setPaper('A4', 'landscape');
+    return $pdf->stream("data_barang.pdf");
+	}
 }

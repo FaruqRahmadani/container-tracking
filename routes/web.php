@@ -48,6 +48,7 @@ Route::group(['middleware' => 'auth'], function(){
   });
   Route::group(['prefix' => 'monitoring', 'as' => 'monitoring'], function(){
     Route::get('', 'MonitoringController@index');
+    Route::put('{id}', 'MonitoringController@update')->name('Update');
   });
 });
 

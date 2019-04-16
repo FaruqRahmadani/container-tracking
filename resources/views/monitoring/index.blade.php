@@ -46,7 +46,7 @@
                 <td>{!! nl2br($value->keterangan) !!}</td>
                 <td class="text-center">{{ $value->umur }}</td>
                 <td class="aksi">
-                  <a href="#" class="btn btn-labeled btn-primary btn-xs" data-toggle="modal" data-target="#modalKirim"><i class="fa fa-paper-plane"></i> Kirim</a>
+                  <a href="{!! route('monitoringUpdate', $value->uuid) !!}" class="btn btn-labeled btn-primary btn-xs modalKirim" data-toggle="modal" data-target="#modalKirim"><i class="fa fa-paper-plane"></i> Kirim</a>
                 </td>
               </tr>
             @endforeach
@@ -65,13 +65,15 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="">
+        <form action="" method="post">
+          @csrf
+          {{method_field('put')}}
           <div class="form-group">
-            <label for="">Tanggal Dikirm</label>
-            <input type="date" name="tanggal" class="form-control" required>
+            <label>Tanggal Dikirm</label>
+            <input type="date" name="tanggal" value="{{now()->toDateString()}}" class="form-control" required>
           </div>
           <div class="form-group">
-            <label for="">Keterangan</label>
+            <label>Keterangan</label>
             <textarea name="keterangan" rows="2" class="form-control" required></textarea>
           </div>
           <div class="form-group">

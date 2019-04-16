@@ -44,32 +44,27 @@
 					</tr>
 				</thead>
 				<tbody>
-					@for ($i = 1; $i < 15; $i++) <tr>
-						<td class="penomoran">{{$i}}</td>
-						<td class="text-center">
-							XX-{{$i}}
-						</td>
-						<td>
-							01/01/2019
-						</td>
-						<td>
-							Lorem, ipsum dolor.
-						</td>
-						<td>
-							nama pengirim
-						</td>
-						<td>
-							nama rekanan
-						</td>
-						<td>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, eaque!
-						</td>
-						<td class="aksi">
-							<a href="#" class="btn btn-labeled btn-secondary btn-xs"><i class="fa fa-edit"></i> ubah</a>
-							<a href="#" class="btn btn-labeled btn-danger btn-xs"><i class="fa fa-trash"></i> hapus</a>
-						</td>
-					</tr>
-					@endfor
+					@foreach ($barang as $value)
+						<tr>
+							<td class="penomoran">{{$loop->iteration}}</td>
+							<td class="text-center">{{$value->nomor_kontainer}}</td>
+							<td>{{HDate::formatDate($value->tanggal_terima)}}</td>
+							<td>{{$value->nama}}</td>
+							<td>{{$value->pengirim}}</td>
+							<td>{{$value->Rekanan->nama}}</td>
+							<td>{!! nl2br($value->keterangan) !!}</td>
+							<td class="aksi">
+								<a href="{!! route('barangEdit', $value->uuid) !!}" class="btn btn-labeled btn-secondary btn-xs"><i class="fa fa-edit"></i> ubah</a>
+								<form action="{!! route('barangDelete', $value->uuid) !!}" method="post">
+									{{ method_field('delete') }}
+									@csrf
+									<button type="submit" class="btn btn-labeled btn-danger btn-xs btn-delete">
+										<i class="fa fa-trash"></i> hapus</a>
+									</button>
+								</form>
+							</td>
+						</tr>
+					@endforeach
 				</tbody>
 			</table>
 		</div>

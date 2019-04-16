@@ -35,50 +35,21 @@
 					</tr>
 				</thead>
 				<tbody>
-					@for ($i = 1; $i < 15; $i++) <tr>
-						<td class="penomoran">{{$i}}</td>
-						<td class="text-center">XX-{{$i}}</td>
-						<td>01/01/2019</td>
-						<td>Lorem, ipsum dolor.</td>
-						<td>nama pengirim</td>
-						<td>nama rekanan</td>
-						<td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, eaque!</td>
-						<td>01/01/2019</td>
-						<td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto, eos!</td>
-					</tr>
-					@endfor
+					@foreach ($barang as $value)
+						<tr>
+							<td class="penomoran">{{$loop->iteration}}</td>
+							<td class="text-center">{{$value->nomor_kontainer}}</td>
+							<td>{{HDate::formatDate($value->tanggal_terima)}}</td>
+							<td>{{$value->nama}}</td>
+							<td>{{$value->pengirim}}</td>
+							<td>{{$value->Rekanan->nama}}</td>
+							<td>{!! nl2br($value->keterangan) !!}</td>
+							<td>{{HDate::formatDate($value->StatusBarang->last()->tanggal)}}</td>
+							<td>{!! nl2br($value->StatusBarang->last()->keterangan) !!}</td>
+						</tr>
+					@endforeach
 				</tbody>
 			</table>
-		</div>
-	</div>
-</div>
-<div class="modal fade" id="editData" tabindex="-1" role="dialog"  aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title">Edit Data Pengiriman</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<form action="">
-					<div class="form-group">
-						<label for="">Tanggal Dikirm</label>
-						<input type="date" name="tanggal" class="form-control">
-					</div>
-					<div class="form-group">
-						<div class="label">Keterangan</div>
-						<textarea name="keterangan" class="form-control" rows="2"></textarea>
-					</div>
-					<div class="form-group">
-						<button class="btn btn-primary" type="submit">Simpan</button>
-					</div>
-				</form>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-			</div>
 		</div>
 	</div>
 </div>

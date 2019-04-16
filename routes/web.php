@@ -58,7 +58,7 @@ Route::group(['middleware' => 'auth'], function(){
   });
 
   Route::group(['prefix' => 'terkirim', 'as' => 'terkirim'], function(){
-    Route::view('', 'terkirim.index');
+    Route::get('', 'TerkirimController@index');
   });
 
   Route::group(['prefix' => 'monitoring', 'as' => 'monitoring'], function(){

@@ -28,6 +28,16 @@ Route::group(['middleware' => 'auth'], function(){
   // chart.js
   Route::view('template/chart', 'template.chart');
 
+	Route::group(['prefix' => 'rekanan', 'as' => 'rekanan'], function(){
+		Route::get('data', 'RekananController@index');
+		Route::get('cetak', 'RekananController@generatePDF')->name('Cetak');
+		Route::get('tambah', 'RekananController@create')->name('Create');
+		Route::post('tambah', 'RekananController@store')->name('Store');
+		Route::get('{id}', 'RekananController@edit')->name('Edit');
+		Route::put('{id}', 'RekananController@update')->name('Update');
+		Route::delete('{id}', 'RekananController@delete')->name('Delete');
+	});
+
   Route::group(['prefix' => 'rekanan', 'as' => 'rekanan'], function(){
     Route::get('', 'RekananController@index');
     Route::get('cetak', 'RekananController@generatePDF')->name('Cetak');
@@ -46,6 +56,11 @@ Route::group(['middleware' => 'auth'], function(){
     Route::put('{id}', 'BarangController@update')->name('Update');
     Route::delete('{id}', 'BarangController@delete')->name('Delete');
   });
+
+  Route::group(['prefix' => 'terkirim', 'as' => 'terkirim'], function(){
+    Route::get('', 'TerkirimController@index');
+  });
+
   Route::group(['prefix' => 'monitoring', 'as' => 'monitoring'], function(){
     Route::get('', 'MonitoringController@index');
     Route::put('{id}', 'MonitoringController@update')->name('Update');

@@ -48,5 +48,11 @@
       <i class="fas fa-angle-up"></i>
     </a>
     <script src="{{ asset('js/app.js') }}"></script>
+    @if (session('alert'))
+      <script>notif('{{session('type')}}', '{{session('title')}}', '{{session('message')}}', '{{session('icon') ?? "check"}}')</script>
+    @endif
+    @if ($errors->count())
+      <script>notif('danger', 'Ada Kesalahan', '{{$errors->first()}}', 'exclamation')</script>
+    @endif
   </body>
   </html>

@@ -50,6 +50,7 @@ Route::group(['middleware' => 'auth'], function(){
 
   Route::group(['prefix' => 'barang', 'as' => 'barang'], function(){
     Route::get('', 'BarangController@index');
+    Route::post('cetak', 'BarangController@generatePDF')->name('Cetak');
     Route::get('tambah', 'BarangController@create')->name('Create');
     Route::post('tambah', 'BarangController@store')->name('Store');
     Route::get('{id}', 'BarangController@edit')->name('Edit');
@@ -58,11 +59,13 @@ Route::group(['middleware' => 'auth'], function(){
   });
 
   Route::group(['prefix' => 'terkirim', 'as' => 'terkirim'], function(){
-    Route::get('', 'TerkirimController@index');
+		Route::get('', 'TerkirimController@index');
+		Route::post('cetak', 'TerkirimController@generatePDF')->name('Cetak');
   });
 
   Route::group(['prefix' => 'monitoring', 'as' => 'monitoring'], function(){
-    Route::get('', 'MonitoringController@index');
+		Route::get('', 'MonitoringController@index');
+    Route::post('cetak', 'MonitoringController@generatePDF')->name('Cetak');
     Route::put('{id}', 'MonitoringController@update')->name('Update');
   });
 });

@@ -13,7 +13,7 @@
 		</div>
 	</div>
 	<div class="card-body">
-		<form class="mb-3" method="post" target="_blank" action="">
+		<form class="mb-3" method="post" target="_blank" action="{{ route('barangCetak') }}">
 			@csrf
 			<div class="form-row align-items-center">
 				<div class="col-auto">

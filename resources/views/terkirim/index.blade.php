@@ -1,9 +1,9 @@
 @extends('layouts.app')
-@section('page-title', 'Data Monitoring')
+@section('page-title', 'Data Terkirim')
 @section('content')
 <div class="card shadow mb-4">
 	<div class="card-body">
-		<form class="mb-3" method="post" target="_blank" action="">
+		<form class="mb-3" method="post" target="_blank" action="{{ route('terkirimCetak') }}">
 			@csrf
 			<div class="form-row align-items-center">
 				<div class="col-auto">

@@ -8,7 +8,7 @@ use App\Barang;
 class MonitoringController extends Controller
 {
   public function index(){
-    $barang = Barang::orderBy('tanggal_terima')->get();
+    $barang = Barang::doesntHave('StatusBarang')->orderBy('tanggal_terima')->get();
     return view('monitoring.index', compact('barang'));
   }
 }

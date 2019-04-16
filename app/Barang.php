@@ -21,4 +21,8 @@ class Barang extends Model
     $umur = Carbon::create($this->tanggal_terima)->diffInDays(now());
     return $umur;
   }
+
+  public function StatusBarang(){
+    return $this->hasMany('App\StatusBarang');
+  }
 }

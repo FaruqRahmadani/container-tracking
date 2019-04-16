@@ -36,7 +36,7 @@ $("#myAreaChart").ready(function() {
     data: {
       labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
       datasets: [{
-        label: "Earnings",
+        label: "Jumlah Barang",
         lineTension: 0.3,
         backgroundColor: "rgba(78, 115, 223, 0.05)",
         borderColor: "rgba(78, 115, 223, 1)",
@@ -80,7 +80,7 @@ $("#myAreaChart").ready(function() {
             padding: 10,
             // Include a dollar sign in the ticks
             callback: function(value, index, values) {
-              return '$' + number_format(value);
+              return number_format(value);
             }
           },
           gridLines: {
@@ -112,7 +112,7 @@ $("#myAreaChart").ready(function() {
         callbacks: {
           label: function(tooltipItem, chart) {
             var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-            return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
+            return datasetLabel + ' ' + number_format(tooltipItem.yLabel);
           }
         }
       }

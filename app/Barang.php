@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Barang extends Model
 {
@@ -14,5 +15,14 @@ class Barang extends Model
 
   public function getUUIDAttribute(){
     return encrypt($this->id);
+  }
+
+  public function getUmurAttribute(){
+    $umur = Carbon::create($this->tanggal_terima)->diffInDays(now());
+    return $umur;
+  }
+
+  public function StatusBarang(){
+    return $this->hasMany('App\StatusBarang');
   }
 }

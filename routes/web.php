@@ -46,6 +46,9 @@ Route::group(['middleware' => 'auth'], function(){
     Route::put('{id}', 'BarangController@update')->name('Update');
     Route::delete('{id}', 'BarangController@delete')->name('Delete');
   });
+  Route::group(['prefix' => 'monitoring', 'as' => 'monitoring'], function(){
+    Route::view('', 'monitoring.index');
+  });
 });
 
 
@@ -54,5 +57,3 @@ Route::group(['namespace' => 'Auth'], function () {
   Route::post('login', 'LoginController@login')->name('login');
   Route::get('logout', 'LoginController@logout')->name('logout');
 });
-
-Route::view('/monitoring/data', 'monitoring.index')->name('monitoringIndex');

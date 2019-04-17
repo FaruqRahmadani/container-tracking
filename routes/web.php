@@ -1,7 +1,7 @@
 <?php
 
 Route::group(['middleware' => 'auth'], function(){
-  Route::view('/', 'dashboard.index')->name('dashboard');
+  Route::get('', 'DashboardController@index')->name('dashboard');
 
   Route::group(['prefix' => 'rekanan', 'as' => 'rekanan'], function(){
     Route::get('data', 'RekananController@index');

@@ -85948,7 +85948,7 @@ $("#myAreaChart").ready(function () {
     data: {
       labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
       datasets: [{
-        label: "Earnings",
+        label: "Jumlah Barang",
         lineTension: 0.3,
         backgroundColor: "rgba(78, 115, 223, 0.05)",
         borderColor: "rgba(78, 115, 223, 1)",
@@ -85992,7 +85992,7 @@ $("#myAreaChart").ready(function () {
             padding: 10,
             // Include a dollar sign in the ticks
             callback: function callback(value, index, values) {
-              return '$' + number_format(value);
+              return number_format(value);
             }
           },
           gridLines: {
@@ -86024,7 +86024,7 @@ $("#myAreaChart").ready(function () {
         callbacks: {
           label: function label(tooltipItem, chart) {
             var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-            return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
+            return datasetLabel + ' ' + number_format(tooltipItem.yLabel);
           }
         }
       }
@@ -86180,11 +86180,11 @@ $("#myPieChart").ready(function () {
   var myPieChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["Direct", "Referral", "Social"],
+      labels: ["Belum Terkirim", "Terkirim"],
       datasets: [{
-        data: [55, 30, 15],
-        backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
-        hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+        data: [55, 30],
+        backgroundColor: ['#e74a3b', '#1cc88a'],
+        hoverBackgroundColor: ['#cf4235', '#17a673'],
         hoverBorderColor: "rgba(234, 236, 244, 1)"
       }]
     },
